@@ -3,13 +3,22 @@ from __future__ import annotations
 import pdfplumber
 import re
 from agent.state import State
-
+'''
 CUTOFF_PATTERNS = [
     r"^\d+\.\s*ANEXOS?\b",        # "15. ANEXOS" ou "15. ANEXO"
     r"^ANEXO\s+[IVX\d]+\b",       # "ANEXO I", "ANEXO 1"
     r"^APÊNDICE\s+[IVX\d]+\b",    # "APÊNDICE A"
     r"^DOS\s+ANEXOS\b",           # "DOS ANEXOS"
 ]
+'''
+
+CUTOFF_PATTERNS = [
+    r"^\d+\.\s*ANEXOS?\s*$",           # "15. ANEXOS" — linha só com isso
+    r"^ANEXO\s+[IVX\d]+\s*$",          # "ANEXO I" — linha só com isso
+    r"^APÊNDICE\s+[IVX\d]+\s*$",       # "APÊNDICE A" — linha só com isso
+    r"^DOS\s+ANEXOS\s*$",              # "DOS ANEXOS" — linha só com isso
+]
+
 
 FOOTER_PATTERNS = [
     r"Funda[çc][aã]o de Amparo",
