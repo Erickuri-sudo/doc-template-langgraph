@@ -51,7 +51,7 @@ Retorne APENAS os campos que claramente variam entre editais do mesmo tipo."""
 def extract_fields(state: State) -> dict[str, Any]:
     """Identify dynamic fields in the extracted edital text."""
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash-lite",
         google_api_key=os.environ["GOOGLE_API_KEY"],
     )
 

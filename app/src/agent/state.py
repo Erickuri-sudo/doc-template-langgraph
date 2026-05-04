@@ -21,6 +21,7 @@ class State:
     raw_text: str = ""
     extracted_fields: list[dict[str, Any]] = field(default_factory=list)
     schema: dict[str, Any] = field(default_factory=dict)
+    schema_json: str = ""
     template: str = ""
     validation_errors: list[str] = field(default_factory=list)
     iteration_count: int = 0
